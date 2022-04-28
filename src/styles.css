@@ -1,0 +1,244 @@
+html{
+     margin: 0;
+     background: #FFFFFF;
+ }
+body{
+    margin:0;
+}
+
+.fontSize{
+    font-family: 'Raleway', sans-serif;
+    align-items: center;
+    font-size: 18px;
+}
+
+.text-decoration{
+    text-decoration: none;
+    color: #1D1F22;
+}
+
+.flex{
+    display: flex;
+    margin-left:117px;
+    align-items: center;
+}
+
+.navBarHeight{
+    height: 80px;
+    margin-left: 0;
+}
+
+.spaceBetween{
+    justify-content: space-between;
+}
+
+.card {
+    width: 24.723%;
+    font-size: 12px;
+    flex: 0 0 auto;         
+    display: flex;          
+    flex-direction: column;
+    position: relative;
+    margin:20px;
+    margin-bottom: 103px;
+}
+
+.cards-list {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-x: auto;
+}
+
+.card--image {
+    width: 100%;
+    border-radius: 9px;
+    margin-bottom: 9px;
+    height:338px;
+    object-fit: contain;
+}
+
+
+.outStock--card--image{
+    width: 100%;
+    border-radius: 9px;
+    margin-bottom: 9px;
+    height:338px;
+    object-fit: contain;
+    opacity: 0.5;
+}
+
+.outStock--card--txt{
+    position:absolute;
+    top:35%;
+    left:25%;
+    color: #8D8F9A;
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.outStock--card--id--price{
+        font-family: 'Raleway', sans-serif;
+        align-items: center;
+        font-size: 18px;
+        color:#8D8F9A;
+        font-weight: 300;
+}
+
+.logo{
+    width: 31px;
+    height: 28px; 
+    object-fit: contain;
+}
+
+.navbar{
+    font-size: 16px;
+    margin-right:20px;
+    font-family: 'Raleway', sans-serif;
+    color: #1D1F22;
+}
+
+.navbar p:hover{
+        color:#5ECE7B;
+        border-bottom: 1px solid #5ECE7B;
+        padding-bottom: 10px;
+    }
+
+.renderCategoryName{
+    font-size: 42px;
+    margin-top: 80px;
+    margin-left: 101px;
+    display: block;
+    margin-bottom: 87px;
+    color: #1D1F22;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+}
+
+.renderCartName{
+    font-size: 32px;
+    margin-top: 80px;
+    margin-left: 101px;
+    display: block;
+    margin-bottom: 55px;
+    color: #1D1F22;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700,bold;
+}
+
+.Currencies{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    flex-direction: column;
+    position: absolute;
+    min-width: 50px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    margin-top: 30px;
+    padding:20px;
+    z-index: 1;
+    background-color:rgba(255,255,255,1)
+}
+
+
+.product-pictures{
+    display:grid;
+    grid-template-columns: 0.5fr 2fr;
+}
+
+
+
+
+.more-pics img{
+    padding: 10px;
+    max-width:100%;
+    height:80px;
+    object-fit: contain;
+}
+
+.main-pic img{
+    max-width: 100%;
+    max-height:510px;
+    object-fit: contain;
+    padding: 5px;
+}
+.more-pics{
+    display:grid;
+}
+
+.parent-cont{
+    padding: 50px 100px 0px 90px;
+}
+
+.product-page-grid{
+    display:grid;
+    grid-template-columns: 5fr 2fr;
+}
+
+
+.product-description ul{
+    display:grid;
+    list-style: none;
+    margin:0;
+    max-width: 50px;
+    padding: 0;
+    flex-wrap: wrap;
+}
+.product-description ul li{
+    cursor:pointer;
+    text-align: center;
+    margin: 5px;
+    padding: 10px 10px 10px 10px;
+    border: 1px solid black;
+    transition: 0.8s;
+}
+.product-description{
+    max-width: 100%;
+}
+.product-description ul li:hover{
+    color:white;
+    background-color: black;
+    transform:scale(1.2);
+}
+.product-description label{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+
+.add-to-cart-btn{
+    background-color: #5ECE7B;
+    border: none;
+    color:white;
+    width:100%;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 20px 0;
+    transition: 1s;
+}
+
+
+/* cart styles */ 
+
+.cart--image {
+    width: 200px;
+    border-radius: 9px;
+    height:100%;
+    object-fit: contain;
+    margin-top:24px;
+    margin-bottom: 24px;
+}
+
+.cart--attribute--name{
+    display: inline;
+    text-align: center;
+    padding: 10px 20px 10px 20px;
+    border: 1px solid black;
+    transition: 1s;
+    font-family: Roboto;
+}
+
+.scrollBar{
+    max-height:450px;
+    overflow:auto;
+}
