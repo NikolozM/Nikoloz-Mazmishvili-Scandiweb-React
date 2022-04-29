@@ -8,6 +8,7 @@ function PDP({currencyIndex,setCartItem,setQuantity,cartItem}){
   const {id} = useParams();
     
   const LOAD_PRODUCT = gql `
+  
     query LOAD_PRODUCT {
       product(id: "${id}"){
         id,

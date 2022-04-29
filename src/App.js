@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import {LOAD_PRODUCTS} from './GraphQL/Queries';
 import {useQuery, gql} from '@apollo/client';
 import PLP from "./pages/PLP/PLP";
 import PDP from "./pages/PDP/PDP";
@@ -7,18 +6,46 @@ import Cart from "./pages/Cart/Cart";
 import Navbar from "./pages/Navbar";
 import { Routes, Route, } from "react-router-dom";
 
-
 import {faYenSign, faPoundSign, faAustralSign, faRubleSign} from "@fortawesome/free-solid-svg-icons";
 import {faDollarSign} from "@fortawesome/free-solid-svg-icons";
 
 
 function App() {
+const [category,setCategory]= useState("all");
+
+const LOAD_PRODUCTS = gql `
+
+query LOAD_PRODUCTS{
+    category (input: {title:"${category}"}){
+      products {
+        id
+        name
+        inStock
+        category
+        gallery
+        prices{
+          currency{
+            label
+            symbol
+          }
+          amount
+        }
+      }
+    },
+    categories{
+      name
+    },
+    currencies{
+      label
+      symbol
+    }
+  }
+  `
     const {error, loading, data} = useQuery(LOAD_PRODUCTS);
     const [products, setProducts] = useState([])
     const [renderCategoryName, setRenderCategoryName] = useState('ALL');
     const [currencyIndex,setCurrencyIndex] = useState(0);
     const [currencySign, setCurrencySign] = useState(faDollarSign);
-
     // Cart page quantity and totalPrice
     const [quantity, setQuantity] = useState(0);
     const[cartItem,setCartItem] = useState([]);
@@ -31,13 +58,8 @@ function App() {
 
 // onClick chooses category and renders items by category. This func goes by props to category
 const chooseCategory =(name) => {
-
-    if (name != 'all'){
-        setProducts(data.category.products.filter(prev=> prev.category === name))
-    }else{
-        setProducts(data.category.products)
-    }
-     setRenderCategoryName(name.toUpperCase());
+    setCategory(name);
+    setRenderCategoryName(name.toUpperCase());
     }
 
 // Changes currency index and passing changed index to product by props
