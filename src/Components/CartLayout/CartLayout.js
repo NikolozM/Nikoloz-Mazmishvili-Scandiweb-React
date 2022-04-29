@@ -39,8 +39,8 @@ const CartLayout=({cartItem,setQuantity,quantity,currencyIndex})=>{
 
 }else{
     return(
-        <div style={{position:"absolute",width:"325px",height:"425px",boxShadow:"0px 8px 16px 0px rgba(0,0,0,0.2)",marginTop:"30px",right:"1px"}}>
-                My bag, {cartItem.length} items
+        <div style={{width:"325px",height:"425px",boxShadow:"0px 8px 16px 0px rgba(0,0,0,0.2)",display:"flex",justifyContent:"center"}}>
+                <h2 style={{marginBottom:"64px",fontFamily: 'Raleway',fontSize: "24px", fontWeight:"700"}}>CART IS EMTPY</h2>
             </div>
     )
     }
