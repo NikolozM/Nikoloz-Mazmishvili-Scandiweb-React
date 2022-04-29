@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import {useQuery, gql} from '@apollo/client';
-import {LOAD_PRODUCTS} from '../GraphQL/Queries';
 import Categories from '../Components/NavbarComponents/Categories'
 import Currencies from '../Components/NavbarComponents/Currencies';
 import logo from '../assets/a-logo.png';
@@ -11,7 +10,18 @@ import CartLayout from '../Components/CartLayout/CartLayout';
 function Navbar({chooseCategory, changeCurrency, currencySign,
     cartItem,setQuantity,quantity,currencyIndex}){
 
-    const {error, loading, data} = useQuery(LOAD_PRODUCTS);
+    const LOAD_CATEGORIES = gql `
+    query LOAD_CATEGORIES{
+    categories{
+      name
+    },
+      currencies{
+        label
+        symbol
+          }
+       }
+  `
+    const {error, loading, data} = useQuery(LOAD_CATEGORIES);
 
     const [categories, setCategories] = useState([]);
 
